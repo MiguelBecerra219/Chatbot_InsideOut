@@ -1,7 +1,7 @@
-import React from 'react'
+import { Typography } from '@mui/material'
 
 export const ChatbotPage = () => {
   return (
-    <div>Chatbot Page</div>
+    <Typography variant='h1'>Hola mundo</Typography>
   )
 }
