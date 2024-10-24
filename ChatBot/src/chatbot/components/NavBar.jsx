@@ -2,7 +2,7 @@ import { MenuOutlined } from '@mui/icons-material'
 import SmartToyIcon from '@mui/icons-material/SmartToy'
 import { AppBar, Grid2, IconButton, Toolbar, Typography } from '@mui/material'
 
-export const NavBar = ({ drawerWidth = 240 }) => {
+export const NavBar = ({ drawerWidth = 280, changeSideBar, open }) => {
   return (
     <AppBar
       position='fixed'
@@ -19,6 +19,7 @@ export const NavBar = ({ drawerWidth = 240 }) => {
             color='inherit'
             edge='start'
             sx = {{ mr: 2 }}
+            onClick={changeSideBar}
           >
             <MenuOutlined />
           </IconButton>
