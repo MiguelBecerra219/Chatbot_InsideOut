@@ -6,7 +6,7 @@ import { useState } from 'react'
 const drawer = 280
 
 export const ChatbotLayout = ({ children }) => {
-  const [open, setopen] = useState(true)
+  const [open, setopen] = useState(false)
 
   const changeSideBar = () => {
     setopen(!open)
@@ -31,7 +31,7 @@ export const ChatbotLayout = ({ children }) => {
         sx={{
           flexGrow: 1,
           p: 1,
-          width: { sm: '100%' }
+          width: { xs: '100%' }
         }}
         onClick={closeSidebar}
       >

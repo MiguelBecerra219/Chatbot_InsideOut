@@ -7,6 +7,7 @@ export const SideBar = ({ drawerWidth = 240, open, changeSideBar }) => {
       component='nav'
       sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
     >
+      {/* Drawer para pantallas pequeñas hasta medianas */}
       <Drawer
         variant={'permanent'}
         open={open}
@@ -15,7 +16,7 @@ export const SideBar = ({ drawerWidth = 240, open, changeSideBar }) => {
           keepMounted: true // Mantener montado en pantallas móviles para mejorar el rendimiento
         }}
         sx={{
-          display: { xs: 'block', sm: 'none' }, // Solo mostrar 'temporary' en pantallas pequeñas
+          display: { xs: 'block', sm: 'block', md: 'block', lg: 'none' }, // Mostrar hasta 'md' (menor de 1200px)
           '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth }
         }}
       >
@@ -42,12 +43,12 @@ export const SideBar = ({ drawerWidth = 240, open, changeSideBar }) => {
         </List>
       </Drawer>
 
-      {/* Drawer persistente para pantallas grandes */}
+      {/* Drawer persistente solo para pantallas grandes (1200px en adelante) */}
       <Drawer
         variant="persistent"
         open={open}
         sx={{
-          display: { xs: 'none', sm: 'block' }, // Mostrar 'persistent' en pantallas grandes
+          display: { xs: 'none', sm: 'none', md: 'none', lg: 'block' }, // Mostrar solo a partir de 'lg' (1200px en adelante)
           '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth }
         }}
       >
