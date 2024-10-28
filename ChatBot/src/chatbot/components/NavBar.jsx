@@ -2,7 +2,7 @@ import { MenuOutlined } from '@mui/icons-material'
 import SmartToyIcon from '@mui/icons-material/SmartToy'
 import { AppBar, Grid2, IconButton, Toolbar, Typography } from '@mui/material'
 
-export const NavBar = ({ drawerWidth = 280, changeSideBar, open }) => {
+export const NavBar = ({ drawerWidth = 280, changeSideBar, handleClick }) => {
   return (
     <AppBar
       position='fixed'
@@ -26,8 +26,8 @@ export const NavBar = ({ drawerWidth = 280, changeSideBar, open }) => {
 
           <Typography variant='h6' noWrap component='div'>Chatbot Inside Out</Typography>
 
-          <IconButton>
-            <SmartToyIcon color='secondary'/>
+          <IconButton onClick={() => handleClick('NothingSelectedChat')}>
+            <SmartToyIcon color='secondary' />
           </IconButton>
         </Grid2>
 

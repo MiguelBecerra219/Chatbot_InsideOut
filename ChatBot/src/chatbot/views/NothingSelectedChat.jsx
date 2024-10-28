@@ -2,10 +2,7 @@ import { CheckCircleOutline, QuestionAnswer, QuestionMark } from '@mui/icons-mat
 import { Alert, Chip, Grid2, Typography } from '@mui/material'
 import { Link } from 'react-router-dom'
 
-export const NothingSelectedChat = () => {
-  const handleClick = () => {
-    console.log('Click')
-  }
+export const NothingSelectedChat = ({ handleClick }) => {
   return (
     <Grid2
       container
@@ -35,7 +32,7 @@ export const NothingSelectedChat = () => {
         <Chip
           icon={<QuestionMark color='primary' />}
           label="Respuestas a las preguntas frecuentes"
-          onClick={handleClick}
+          onClick={() => handleClick('Faqs')}
           variant="outlined"
           sx={{
             marginBottom: '15px',
@@ -48,7 +45,7 @@ export const NothingSelectedChat = () => {
         <Chip
           icon={<QuestionAnswer color='primary' />}
           label="Chatbot de Inside Out"
-          onClick={handleClick}
+          onClick={() => handleClick('ChatComponent')}
           variant="outlined"
           sx={{
             marginBottom: '15px',

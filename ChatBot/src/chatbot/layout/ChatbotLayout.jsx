@@ -1,13 +1,21 @@
 import { Box } from '@mui/material'
 import { NavBar, SideBar } from '../components'
 import { useState } from 'react'
+import { NothingSelectedChat } from '../views/NothingSelectedChat'
+import { ChatComponent } from '../views/Chat'
+import { Faqs } from '../views/Faqs'
 
 /* Constante para los tamaños se enviara a los componentes para acomodar todo */
 const drawer = 280
 
 export const ChatbotLayout = ({ children }) => {
   const [open, setopen] = useState(false)
+  const [selection, setSelection] = useState('NothingSelectedChat')
 
+  // Cambiar el valor de selection desde el NavBar u otros componentes
+  const handleClick = (newSelection) => {
+    setSelection(newSelection)
+  }
   const changeSideBar = () => {
     setopen(!open)
   }
@@ -22,7 +30,7 @@ export const ChatbotLayout = ({ children }) => {
   const drawerWidth = open ? drawer : 0
   return (
     <Box sx={{ display: 'flex' }}>
-      <NavBar drawerWidth={ drawerWidth } changeSideBar={ changeSideBar } open={open}/>
+      <NavBar drawerWidth={ drawerWidth } changeSideBar={ changeSideBar } open={open} handleClick={handleClick}/>
 
       <SideBar drawerWidth={ drawerWidth } open={open}/>
 
@@ -36,7 +44,9 @@ export const ChatbotLayout = ({ children }) => {
         onClick={closeSidebar}
       >
         {/* Toolbar */}
-
+        {selection === 'NothingSelectedChat' && <NothingSelectedChat handleClick={handleClick} /> }
+        {selection === 'ChatComponent' && <ChatComponent /> }
+        {selection === 'Faqs' && <Faqs /> }
         {children}
       </Box>
     </Box>
