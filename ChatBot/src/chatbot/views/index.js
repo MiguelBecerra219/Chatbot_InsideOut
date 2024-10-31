@@ -1,1 +1,5 @@
 export * from './NothingSelectedChat'
+export * from './Chat'
+export * from './Faqs'
+export * from './terms'
+export * from './PrivacyPolicy'

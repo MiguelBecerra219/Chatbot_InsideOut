@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Box } from '@mui/material'
-import { Message } from '../components/Message'
-import { BarraEntrada } from '../components/BarraEntrada'
+import { Message, BarraEntrada } from '../components'
 
 // Componente de chat principal
 export const ChatComponent = () => {

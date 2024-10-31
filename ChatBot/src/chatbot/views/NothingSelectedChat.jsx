@@ -17,6 +17,12 @@ export const NothingSelectedChat = ({ handleClick }) => {
     >
 
       <Grid2>
+        <Typography color='white' pb='10px' sx={{
+          fontSize: { xs: '1.5rem', sm: '2.1rem', md: '2.5rem', lg: '2.8rem' }
+        }}>¡Hola! soy Anita</Typography>
+      </Grid2>
+
+      <Grid2>
         <Typography color='white' pb='50px' sx={{
           fontSize: { xs: '1.5rem', sm: '2.1rem', md: '2.5rem', lg: '2.8rem' }
         }}>¿Con qué puedo ayudarte?</Typography>
@@ -47,6 +53,7 @@ export const NothingSelectedChat = ({ handleClick }) => {
           label="Chatbot de Inside Out"
           onClick={() => handleClick('ChatComponent')}
           variant="outlined"
+          disabled
           sx={{
             marginBottom: '15px',
             color: 'white',
@@ -65,9 +72,9 @@ export const NothingSelectedChat = ({ handleClick }) => {
               color: 'white'
             }}>
             Al enviar un mensaje, aceptas nuestros
-            <Link to="/terms" style={{ color: '#6b8d2e', textDecoration: 'underline' }}> Términos </Link>
+            <Link onClick={() => handleClick('Terms')} style={{ color: '#6b8d2e', textDecoration: 'underline' }}> Términos </Link>
             y reconoces que leíste nuestra
-            <Link to="/privacy" style={{ color: '#6b8d2e', textDecoration: 'underline' }}> Política de privacidad</Link>
+            <Link onClick={() => handleClick('PrivacyPolicy')} style={{ color: '#6b8d2e', textDecoration: 'underline' }}> Política de privacidad</Link>
           </Alert>
       </Grid2>
 

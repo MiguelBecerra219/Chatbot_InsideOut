@@ -20,6 +20,7 @@ export const NavBar = ({ drawerWidth = 280, changeSideBar, handleClick }) => {
             edge='start'
             sx = {{ mr: 2 }}
             onClick={changeSideBar}
+            disabled
           >
             <MenuOutlined />
           </IconButton>

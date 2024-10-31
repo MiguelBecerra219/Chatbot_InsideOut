@@ -1,9 +1,7 @@
 import { Box } from '@mui/material'
 import { NavBar, SideBar } from '../components'
 import { useState } from 'react'
-import { NothingSelectedChat } from '../views/NothingSelectedChat'
-import { ChatComponent } from '../views/Chat'
-import { Faqs } from '../views/Faqs'
+import { NothingSelectedChat, Terms, ChatComponent, Faqs, PrivacyPolicy } from '../views'
 
 /* Constante para los tamaños se enviara a los componentes para acomodar todo */
 const drawer = 280
@@ -47,6 +45,8 @@ export const ChatbotLayout = ({ children }) => {
         {selection === 'NothingSelectedChat' && <NothingSelectedChat handleClick={handleClick} /> }
         {selection === 'ChatComponent' && <ChatComponent /> }
         {selection === 'Faqs' && <Faqs /> }
+        {selection === 'Terms' && <Terms /> }
+        {selection === 'PrivacyPolicy' && <PrivacyPolicy /> }
         {children}
       </Box>
     </Box>
